@@ -1,3 +1,9 @@
+PATH
+  remote: engines/deprecated
+  specs:
+    deprecated (0.1.0)
+      rails (~> 7.0.0.alpha2)
+
 GEM
   remote: https://pkgs.shopify.io/basic/gems/ruby/
   specs:
@@ -539,6 +545,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   capybara (>= 3.26)
   debug (>= 1.0.0)
+  deprecated!
   ejson-rails
   importmap-rails (>= 0.3.4)
   jbuilder (~> 2.7)
