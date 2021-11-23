@@ -12,7 +12,7 @@ class UsersTest < ApplicationSystemTestCase
 
   test "should create User" do
     visit users_url
-    click_on "New User"
+    click_on "New user"
 
     fill_in "Name", with: @user.name
     click_on "Create User"
@@ -22,8 +22,8 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test "should update User" do
-    visit users_url
-    click_on "Edit", match: :first
+    visit user_url(@user)
+    click_on "Edit this user", match: :first
 
     fill_in "Name", with: @user.name
     click_on "Update User"
@@ -33,10 +33,8 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test "should destroy User" do
-    visit users_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+    visit user_url(@user)
+    click_on "Destroy", match: :first
 
     assert_text "User was successfully destroyed"
   end

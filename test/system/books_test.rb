@@ -12,7 +12,7 @@ class BooksTest < ApplicationSystemTestCase
 
   test "should create Book" do
     visit books_url
-    click_on "New Book"
+    click_on "New book"
 
     fill_in "Name", with: @book.name
     fill_in "User", with: @book.user_id
@@ -23,7 +23,7 @@ class BooksTest < ApplicationSystemTestCase
   end
 
   test "should update Book" do
-    visit books_url
+    visit book_url(@book)
     click_on "Edit", match: :first
 
     fill_in "Name", with: @book.name
@@ -35,10 +35,8 @@ class BooksTest < ApplicationSystemTestCase
   end
 
   test "should destroy Book" do
-    visit books_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+    visit book_url(@book)
+    click_on "Destroy", match: :first
 
     assert_text "Book was successfully destroyed"
   end
