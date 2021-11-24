@@ -2,6 +2,8 @@ require "test_helper"
 
 module Deprecated
   class BooksControllerTest < ActionDispatch::IntegrationTest
+    include Engine.routes.url_helpers
+
     setup do
       @book = deprecated_books(:one)
     end
